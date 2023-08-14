@@ -5,10 +5,11 @@ const collection = 'cities';
 let schema = new Schema({
     "name": { type: String, required: true },
     "country": { type: String, required: true },
+    "url": { type: String, required: true }
 }, {
     timestamps: true
 })
 
-const cities = model(collection, schema)
+const Cities = model(collection, schema)
 
-export default cities
+export default Cities;
