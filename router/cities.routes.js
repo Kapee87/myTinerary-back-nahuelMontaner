@@ -3,7 +3,7 @@ import citiesController from '../controllers/cities.controller.js';
 
 const router = express.Router();
 
-const { getCities, getCitiesById, createCity, updateCity } = citiesController
+const { getCities, getCitiesById, createCity, updateCity, deleteCity } = citiesController
 
 router.get('/', getCities);
 
