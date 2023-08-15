@@ -1,5 +1,5 @@
 import express from 'express'
-// import userRouter from './users.router.js'
+import userRouter from './users.router.js'
 import citiesRouter from './cities.routes.js'
 
 const router = express.Router();
@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     )
 });
 
-// router.use('/users', userRouter)
+router.use('/users', userRouter)
 
 router.use('/cities', citiesRouter)
 
