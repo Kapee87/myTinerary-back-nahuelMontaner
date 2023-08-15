@@ -1,8 +1,8 @@
-// import express from 'express'
-// import userController from '../controllers/cities.controller.js'
+import express from 'express'
+import userController from '../controllers/cities.controller.js'
 
-// const router = express.Router();
+const router = express.Router();
 
-// router.get('/', userController.getUsers);
+router.get('/', userController.getUsers);
 
-// export default router
+export default router
