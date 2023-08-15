@@ -51,7 +51,8 @@ const controller = {
         } catch (error) {
             return res.status(500).json({
                 success: false,
-                message: 'Error creating the User'
+                message: 'Error creating the User',
+                error: error 
             })
         }
     },
