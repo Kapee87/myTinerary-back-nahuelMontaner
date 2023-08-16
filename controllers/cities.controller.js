@@ -50,8 +50,7 @@ const controller = {
         } catch (error) {
             return res.status(500).json({
                 success: false,
-                message: 'Error retieving data',
-                error: error,
+                message: 'Error retieving data'
             })
         }
     },
@@ -65,7 +64,8 @@ const controller = {
         } catch (error) {
             return res.status(500).json({
                 success: false,
-                message: 'Error creating the city'
+                message: 'Error creating the city',
+                error: error
             })
         }
     },

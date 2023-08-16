@@ -1,0 +1,114 @@
+[
+  {
+    "country": "France",
+    "city": "Paris",
+    "image": "https://img.freepik.com/free-photo/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky_181624-5118.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "Paris, the capital of France, is a major European city and a global center for art, fashion, gastronomy and culture.",
+    "price": 1200
+  },
+  {
+    "country": "Spain",
+    "city": "Barcelona",
+    "image": "https://img.freepik.com/free-photo/port-barcelona-during-evening-spain_1398-4569.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "Barcelona, the cosmopolitan capital of Spain’s Catalonia region, is known for its art and architecture.",
+    "price": 1100
+  },
+  {
+    "country": "Italy",
+    "city": "Rome",
+    "image": "https://img.freepik.com/free-photo/breathtaking-shot-colosseum-amphitheatre-located-rome-italy_181624-41196.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "Rome, Italy's capital, is a sprawling, cosmopolitan city with nearly 3,000 years of globally influential art, architecture and culture on display.",
+    "price": 1500
+  },
+  {
+    "country": "United Kingdom",
+    "city": "London",
+    "image": "https://img.freepik.com/free-photo/big-ben-westminster-bridge-sunset-london-uk_268835-1395.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times.",
+    "price": 1300
+  },
+  {
+    "country": "United States",
+    "city": "New York City",
+    "image": "https://img.freepik.com/premium-photo/statue-liberty-with-one-world-trade-building-center-hudson-river-new-york-cityscape-background-landmarks-lower-manhattan-new-york-city_1439-203.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean.",
+    "price": 1100
+  },
+  {
+    "country": "China",
+    "city": "Beijing",
+    "image": "https://img.freepik.com/free-photo/day-city-view_1417-1838.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "Beijing, China’s sprawling capital, has history stretching back 3 millennia. Yet it’s known as much for modern architecture as its ancient sites.",
+    "price": 1300
+  },
+  {
+    "country": "India",
+    "city": "Agra",
+    "image": "https://img.freepik.com/free-photo/beautiful-shot-udaipur-from-window-city-palace_181624-44764.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "Agra is a city on the banks of the river Yamuna in the northern state of Uttar Pradesh, India.",
+    "price": 900
+  },
+  {
+    "country": "Turkey",
+    "city": "Istanbul",
+    "image": "https://img.freepik.com/free-photo/istanbul-s-ocean-with-cruise-ship_53876-42289.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "Istanbul is a major city in Turkey that straddles Europe and Asia across the Bosphorus Strait. Its Old City reflects cultural influences of the many empires that once ruled here.",
+    "price": 1000
+  },
+  {
+    "country": "Brazil",
+    "city": "Rio de Janeiro",
+    "image": "https://img.freepik.com/premium-photo/aerial-view-rio-de-janeiro-brazil_499484-359.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "Rio de Janeiro is a huge seaside city in Brazil, famed for its Copacabana and Ipanema beaches, 38m Christ the Redeemer statue atop Mount Corcovado and for Sugarloaf Mountain, a granite peak with cable cars to its summit.",
+    "price": 1100
+  },
+  {
+    "country": "Mexico",
+    "city": "Mexico City",
+    "image": "https://img.freepik.com/premium-photo/flagpole-constitution-zocalo-square-mexico-city_261932-3504.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "Mexico City, Mexico's sprawling capital, has a tremendous offering of museums, vibrant nightlife and gourmet restaurants.",
+    "price": 900
+  },
+  {
+    "country": "Egypt",
+    "city": "Cairo",
+    "image": "https://img.freepik.com/premium-photo/view-great-sphinx_219717-5368.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "Cairo, Egypt’s sprawling capital, is set on the Nile River. At its heart is Tahrir Square and the vast Egyptian Museum, a trove of antiquities including royal mummies and gilded King Tutankhamun artifacts.",
+    "price": 900
+  },
+  {
+    "country": "Japan",
+    "city": "Tokyo",
+    "image": "https://img.freepik.com/free-photo/pathway-middle-buildings-dark-sky-japan_181624-43078.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "Tokyo, Japan’s busy capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples.",
+    "price": 1500
+  },
+  {
+    "country": "Greece",
+    "city": "Athens",
+    "image": "https://img.freepik.com/premium-photo/parthenon-acropolis-athens-greece_87646-1639.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "Athens, Greece's capital, has ancient monuments, like the 5th-century B.C. Acropolis citadel with the Parthenon temple.",
+    "price": 1000
+  },
+  {
+    "country": "South Africa",
+    "city": "Cape Town",
+    "image": "https://p1.pxfuel.com/preview/431/412/26/kirstenbosch-gardens-ca-cape-royalty-free-thumbnail.jpg",
+    "detail": "Cape Town, located at the shore of Table Bay, is the capital city of the Western Cape province of South Africa.",
+    "price": 1300
+  },
+  {
+    "country": "Thailand",
+    "city": "Bangkok",
+    "image": "https://img.freepik.com/free-photo/wat-arun-temple-twilight-bangkok-thailand_335224-772.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "Bangkok, Thailand's capital, is a large city known for ornate shrines and vibrant street life. The boat-filled Chao Phraya River feeds its network of canals, flowing past the Rattanakosin royal district, home to opulent Grand Palace and its sacred Wat Phra Kaew Temple.",
+    "price": 800
+  },
+  {
+    "country": "Australia",
+    "city": "Sydney",
+    "image": "https://img.freepik.com/premium-photo/downtown-sydney-skyline-australia-twilight_255553-3062.jpg?size=626&ext=jpg&ga=GA1.2.627092359.1692183177&semt=country_rows_v2",
+    "detail": "Sydney is the state capital of New South Wales and the most populous city in Australia.",
+    "price": 1800
+  }
+]
