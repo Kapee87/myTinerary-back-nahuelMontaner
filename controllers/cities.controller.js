@@ -66,7 +66,7 @@ const controller = {
                 success: false,
                 message: 'Error creating the city',
                 error: error,
-                body: req.body
+                body: req
             })
         }
     },
