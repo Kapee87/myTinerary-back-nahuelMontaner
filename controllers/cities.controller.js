@@ -65,8 +65,7 @@ const controller = {
             return res.status(500).json({
                 success: false,
                 message: 'Error creating the city',
-                error: error,
-                body: req
+                error: error
             })
         }
     },
