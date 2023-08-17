@@ -3,22 +3,22 @@ import Cities from "../models/Cities.js"
 const controller = {
     getCities: async (req, res) => {
 
-        /* filtros?
 
-         let queries = {}
+
+        let queries = {}
 
         if (req.query.name) {
-            queries.name = {name: new RegExp(`^${req.query.name}`,'i')}
+            queries.name = { name: new RegExp(`^${req.query.name}`, 'i') }
         }
         if (req.query.country) {
-            queries.country = {country: new RegExp(`^${req.query.country}`,'i')}
+            queries.country = { country: new RegExp(`^${req.query.country}`, 'i') }
         }
 
-        */
+
 
         try {
             // el find no es igual al de js, este es de mongoose
-            const getCities = await Cities.find()
+            const getCities = await Cities.find(queries)
 
             if (getCities.length > 0) {
                 return res.status(200).json({
