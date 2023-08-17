@@ -8,9 +8,9 @@ const controller = {
         if (req.query.city) {
             queries.city = new RegExp(`^${req.query.city}`, 'i')
         }
-        /*  if (req.query.country) {
-             queries.country = { country: new RegExp(`^${req.query.country}`, 'i') }
-         } */
+        if (req.query.country) {
+            queries.country = new RegExp(`^${req.query.country}`, 'i')
+        }
 
         try {
             // el find no es igual al de js, este es de mongoose
