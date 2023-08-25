@@ -7,7 +7,10 @@ let schema = new Schema({
     "country": { type: String, required: true },
     "image": { type: String, required: true },
     "detail": { type: String, required: true },
-    "price": { type: Number }
+    "price": { type: Number },
+    "itineraries": [
+        { type: Types.ObjectId, ref: 'Itinerary' }
+    ]
 }, {
     timestamps: true
 })
