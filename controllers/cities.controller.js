@@ -1,4 +1,4 @@
-import Cities from "../models/Cities.js"
+import City from "../models/City.js"
 
 const controller = {
     getCities: async (req, res) => {
@@ -14,12 +14,12 @@ const controller = {
 
         try {
             // el find no es igual al de js, este es de mongoose
-            const getCities = await Cities.find(queries)
+            const getCities = await City.find(queries)
 
             if (getCities.length > 0) {
                 return res.status(200).json({
                     success: true,
-                    cities: getCities// tmb se puede dejar solo getCities
+                    cities: getCities,// tmb se puede dejar solo getCities
                 })
             }
             return res.status(404).json({
@@ -38,7 +38,7 @@ const controller = {
     getCitiesById: async (req, res) => {
 
         try {
-            const getCitieById = await Cities.findById(req.params.id)
+            const getCitieById = await City.findOne({ _id: req.params.id }).populate('itineraries')
             return res.status(200).json({
                 success: true,
                 cities: getCitieById
@@ -52,7 +52,7 @@ const controller = {
     },
     createCity: async (req, res) => {
         try {
-            const newCity = await Cities.create(req.body)
+            const newCity = await City.create(req.body)
             return res.status(201).json({
                 success: true,
                 message: 'City created'
@@ -67,7 +67,7 @@ const controller = {
     },
     deleteCity: async (req, res) => {
         try {
-            const deleteCity = await Cities.findByIdAndDelete(req.params.id)
+            const deleteCity = await City.findByIdAndDelete(req.params.id)
             return res.status(200).json({
                 success: true,
                 message: 'City deleted'
@@ -81,7 +81,7 @@ const controller = {
     },
     updateCity: async (req, res) => {
         try {
-            const updateCityArray = await Cities.findByIdAndUpdate(req.params.id, req.body, { new: true })
+            const updateCityArray = await City.findByIdAndUpdate(req.params.id, req.body, { new: true })
             return res.status(200).json({
                 success: true,
                 message: 'City updated',

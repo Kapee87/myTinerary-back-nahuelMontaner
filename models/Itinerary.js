@@ -4,10 +4,11 @@ const collection = 'itinerary';
 
 let schema = new Schema({
     "name": { type: String, required: true },
-    "duration": { type: Number, required: true },
+    "duration": { type: String, required: true },
     "price": { type: Number },
     "likes": { type: Number },
-    // "user":{ type:Object.}
+    "user": { type: Types.ObjectId, ref: 'User' },
+    "city_id": { type: Types.ObjectId, ref: 'City' },
     "hashtags": [
         { type: String, required: true }
     ],

@@ -8,14 +8,12 @@ let schema = new Schema({
     "image": { type: String, required: true },
     "detail": { type: String, required: true },
     "price": { type: Number },
-    "itineraries": [
-        { type: Types.ObjectId, ref: 'Itinerary' }
-    ]
+    "itineraries": { type: [Types.ObjectId], ref: 'Itinerary' }
 }, {
     timestamps: true
 })
 
-const Cities = model(collection, schema)
+const City = model(collection, schema)
 
-export default Cities;
+export default City;
 

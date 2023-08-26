@@ -5,7 +5,7 @@ const controller = {
 
         try {
             // el find no es igual al de js, este es de mongoose
-            const getItineraries = await Itinerary.find()
+            const getItineraries = await Itinerary.find().populate('user')
 
             if (getItineraries.length > 0) {
                 return res.status(200).json({
@@ -42,6 +42,7 @@ const controller = {
         }
     },
     createItinerary: async (req, res) => {
+        console.log(req.body);
         try {
             const newItinerary = await Itinerary.create(req.body)
             return res.status(201).json({
