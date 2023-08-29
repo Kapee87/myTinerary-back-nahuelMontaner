@@ -14,7 +14,7 @@ const controller = {
 
         try {
             // el find no es igual al de js, este es de mongoose
-            const getCities = await City.find(queries)
+            const getCities = await City.find(queries).populate('itineraries')
 
             if (getCities.length > 0) {
                 return res.status(200).json({
