@@ -8,7 +8,7 @@ let schema = new Schema({
     "image": { type: String, required: true },
     "detail": { type: String, required: true },
     "price": { type: Number },
-    "itineraries": [{ type: Types.ObjectId, ref: 'Itinerary' }]
+    "itineraries": [{ type: Types.ObjectId, ref: 'itineraries' }]
 }, {
     timestamps: true
 })

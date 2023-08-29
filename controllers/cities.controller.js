@@ -38,7 +38,7 @@ const controller = {
     getCitiesById: async (req, res) => {
 
         try {
-            const getCitieById = await City.findById(req.params.id)
+            const getCitieById = await City.findById(req.params.id).populate('itineraries')
             return res.status(200).json({
                 success: true,
                 Cities: getCitieById
