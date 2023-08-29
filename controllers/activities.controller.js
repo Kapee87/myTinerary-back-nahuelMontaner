@@ -1,30 +1,20 @@
-import City from "../models/City.js"
+import Activity from "../models/Activity.js";
 
 const controller = {
-    getCities: async (req, res) => {
-
-        let queries = {}
-
-        if (req.query.city) {
-            queries.city = new RegExp(`^${req.query.city}`, 'i')
-        }
-        if (req.query.country) {
-            queries.country = new RegExp(`^${req.query.country}`, 'i')
-        }
+    getActivities: async (req, res) => {
 
         try {
             // el find no es igual al de js, este es de mongoose
-            const getCities = await City.find(queries)
-
-            if (getCities.length > 0) {
+            const getActivities = await Activity.find()
+            if (getActivities.length > 0) {
                 return res.status(200).json({
                     success: true,
-                    cities: getCities,// tmb se puede dejar solo getCities
+                    activities: getActivities// tmb se puede dejar solo getActivities
                 })
             }
             return res.status(404).json({
                 success: false,
-                message: 'cities not found'
+                message: 'Activities not found'
             })
 
         } catch (error) {
@@ -35,63 +25,63 @@ const controller = {
             })
         }
     },
-    getCitiesById: async (req, res) => {
+    getActivityById: async (req, res) => {
 
         try {
-            const getCitieById = await City.findById(req.params.id).populate('itineraries')
+            const getActivityById = await Activity.findById(req.params.id)
             return res.status(200).json({
                 success: true,
-                Cities: getCitieById
+                activity: getActivityById
             })
         } catch (error) {
             return res.status(500).json({
                 success: false,
-                message: 'Error retieving data',
-                error: error
+                message: 'Error retieving data'
             })
         }
     },
-    createCity: async (req, res) => {
+    createActivity: async (req, res) => {
+        console.log(req.body);
         try {
-            const newCity = await City.create(req.body)
+            const newActivity = await Activity.create(req.body)
             return res.status(201).json({
                 success: true,
-                message: 'City created'
+                message: 'Activity created'
             })
         } catch (error) {
             return res.status(500).json({
                 success: false,
-                message: 'Error creating the city',
+                message: 'Error creating the Activity',
                 error: error
             })
         }
     },
-    deleteCity: async (req, res) => {
+    deleteActivity: async (req, res) => {
         try {
-            const deleteCity = await City.findByIdAndDelete(req.params.id)
+            const deleteActivity = await Activity.findByIdAndDelete(req.params.id)
             return res.status(200).json({
                 success: true,
-                message: 'City deleted'
+                message: 'Activity deleted'
             })
         } catch (error) {
             return res.status(500).json({
                 success: false,
-                message: 'Error deleting the city'
+                message: 'Error deleting the Activity'
             })
         }
     },
-    updateCity: async (req, res) => {
+    updateActivity: async (req, res) => {
         try {
-            const updateCityArray = await City.findByIdAndUpdate(req.params.id, req.body, { new: true })
+            const updateActivityArray = await Activity.findByIdAndUpdate(req.params.id, req.body, { new: true })
             return res.status(200).json({
                 success: true,
-                message: 'City updated',
-                updateCityArray
+                message: 'Activity updated',
+                updateActivityArray
             })
         } catch (error) {
             return res.status(500).json({
                 success: false,
-                message: 'Error updating the city'
+                message: 'Error updating the Activity'
             })
         }
     }

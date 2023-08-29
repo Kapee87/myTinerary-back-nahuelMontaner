@@ -4,7 +4,7 @@ const collection = 'users';
 
 let schema = new Schema({
     'name': { type: String, required: true },
-    'iamge': { type: String, required: true }
+    'image': { type: String, required: true }
 }, {
     timestamps: true
 })
