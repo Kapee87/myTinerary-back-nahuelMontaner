@@ -5,8 +5,9 @@ const controller = {
 
         try {
             // el find no es igual al de js, este es de mongoose
-            const getItineraries = await Itinerary.find().populate('user').populate('city').populate('activities')
-            console.log(getItineraries);
+            const getItineraries = await Itinerary.find().populate('user').populate('activities').populate({
+                path: 'user'
+            })
             if (getItineraries.length > 0) {
                 return res.status(200).json({
                     success: true,

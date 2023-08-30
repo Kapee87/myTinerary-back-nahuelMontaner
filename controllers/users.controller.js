@@ -25,22 +25,22 @@ const controller = {
             })
         }
     },
-    // getUserById: async (req, res) => {
+    getUserById: async (req, res) => {
 
-    //     try {
-    //         const getUserById = await User.findById(req.params.id)
-    //         return res.status(200).json({
-    //             success: true,
-    //             cities: getUserById
-    //         })
-    //     } catch (error) {
-    //         return res.status(500).json({
-    //             success: false,
-    //             message: 'Error retieving data',
-    //             error: error,
-    //         })
-    //     }
-    // },
+        try {
+            const getUserById = await User.findById(req.params.id)
+            return res.status(200).json({
+                success: true,
+                user: getUserById
+            })
+        } catch (error) {
+            return res.status(500).json({
+                success: false,
+                message: 'Error retieving data',
+                error: error,
+            })
+        }
+    },
     createUser: async (req, res) => {
         try {
             const newUser = await User.create(req.body)
@@ -52,40 +52,40 @@ const controller = {
             return res.status(500).json({
                 success: false,
                 message: 'Error creating the User',
-                error: error 
+                error: error
             })
         }
     },
-    // deleteUser: async (req, res) => {
-    //     try {
-    //         const deleteUser = await User.findByIdAndDelete(req.params.id)
-    //         return res.status(200).json({
-    //             success: true,
-    //             message: 'User deleted'
-    //         })
-    //     } catch (error) {
-    //         return res.status(500).json({
-    //             success: false,
-    //             message: 'Error deleting the city'
-    //         })
-    //     }
-    // },
-    // updateUser: async (req, res) => {
-    //     try {
-    //         const updateUserArray = await User.findByIdAndUpdate(req.params.id, req.body, { new: true })
-    //         return res.status(200).json({
-    //             success: true,
-    //             message: 'User updated',
-    //             updateUserArray
-    //         })
-    //     } catch (error) {
-    //         return res.status(500).json({
-    //             success: false,
-    //             message: 'Error updating the User'
-    //         })
-    //     }
-    // }
 
+    deleteUser: async (req, res) => {
+        try {
+            const deleteUser = await User.findByIdAndDelete(req.params.id)
+            return res.status(200).json({
+                success: true,
+                message: 'User deleted'
+            })
+        } catch (error) {
+            return res.status(500).json({
+                success: false,
+                message: 'Error deleting the city'
+            })
+        }
+    },
+    updateUser: async (req, res) => {
+        try {
+            const updateUserArray = await User.findByIdAndUpdate(req.params.id, req.body, { new: true })
+            return res.status(200).json({
+                success: true,
+                message: 'User updated',
+                updateUserArray
+            })
+        } catch (error) {
+            return res.status(500).json({
+                success: false,
+                message: 'Error updating the User'
+            })
+        }
+    }
 }
 
 export default controller;
