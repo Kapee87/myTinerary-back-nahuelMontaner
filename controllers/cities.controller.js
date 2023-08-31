@@ -14,7 +14,7 @@ const controller = {
 
         try {
             // el find no es igual al de js, este es de mongoose
-            const getCities = await City.find(queries).populate('itineraries')
+            const getCities = await City.find(queries)
 
             if (getCities.length > 0) {
                 return res.status(200).json({
@@ -39,16 +39,16 @@ const controller = {
 
         try {
             const getCitieById = await City.findById(req.params.id)
-            //a implementar más adelante
-            .populate({ 
-                path: 'itineraries',
-                populate: {
-                    path: 'activities',
-                    path: 'comments',
-                    path: 'comments',
-                    path: 'user'
-                }
-            })
+                //a implementar más adelante
+                .populate({
+                    path: 'itineraries',
+                    populate: {
+                        path: 'activities',
+                        path: 'comments',
+                        path: 'comments',
+                        path: 'user'
+                    }
+                })
             return res.status(200).json({
                 success: true,
                 Cities: getCitieById
