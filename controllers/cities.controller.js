@@ -39,15 +39,12 @@ const controller = {
 
         try {
             const getCitieById = await City.findById(req.params.id)
-                //a implementar más adelante
                 .populate({
                     path: 'itineraries',
-                    populate: {
-                        path: 'activities',
-                        path: 'comments',
-                        path: 'comments',
-                        path: 'user'
-                    }
+                    populate: [
+                        { path: 'activities' },
+                        { path: 'comments', populate: 'user' },
+                        { path: 'user' }]
                 })
             return res.status(200).json({
                 success: true,
