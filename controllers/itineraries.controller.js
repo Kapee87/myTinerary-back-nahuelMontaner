@@ -74,16 +74,19 @@ const controller = {
     },
     updateItinerary: async (req, res) => {
         try {
-            const updateItineraryArray = await Itinerary.findByIdAndUpdate(req.params.id, req.body, { new: true })
+            const updateItineraryArray = await Itinerary.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true })
             return res.status(200).json({
                 success: true,
                 message: 'Itinerary updated',
-                updateItineraryArray
+                updateItineraryArray,
+                oldData: req.body
             })
         } catch (error) {
             return res.status(500).json({
                 success: false,
-                message: 'Error updating the Itinerary'
+                message: 'Error updating the Itinerary',
+                old: req.body,
+                error
             })
         }
     }

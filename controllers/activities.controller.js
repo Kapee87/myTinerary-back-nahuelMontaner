@@ -72,7 +72,7 @@ const controller = {
     },
     updateActivity: async (req, res) => {
         try {
-            const updateActivityArray = await Activity.findByIdAndUpdate(req.params.id, req.body, { new: true })
+            const updateActivityArray = await Activity.findOneAndUpdate(req.params.id, req.body, { new: true })
             return res.status(200).json({
                 success: true,
                 message: 'Activity updated',

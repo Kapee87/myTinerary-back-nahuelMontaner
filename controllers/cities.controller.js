@@ -89,7 +89,7 @@ const controller = {
     },
     updateCity: async (req, res) => {
         try {
-            const updateCityArray = await City.findByIdAndUpdate(req.params.id, req.body, { new: true })
+            const updateCityArray = await City.findOneAndUpdate(req.params.id, req.body, { new: true })
             return res.status(200).json({
                 success: true,
                 message: 'City updated',

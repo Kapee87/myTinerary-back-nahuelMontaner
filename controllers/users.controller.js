@@ -73,7 +73,7 @@ const controller = {
     },
     updateUser: async (req, res) => {
         try {
-            const updateUserArray = await User.findByIdAndUpdate(req.params.id, req.body, { new: true })
+            const updateUserArray = await User.findOneAndUpdate(req.params.id, req.body, { new: true })
             return res.status(200).json({
                 success: true,
                 message: 'User updated',
