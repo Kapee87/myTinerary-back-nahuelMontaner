@@ -10,7 +10,7 @@ import passport from '../middlewares/passport.js';
 
 const router = express.Router();
 
-const { signup, signin, signout } = authController
+const { signup, signin, signout, token } = authController
 router.post('/signup',
     /* validator(validateSignUpUser), */
     accountExistsSignUp,
@@ -26,6 +26,11 @@ router.post('/signin',
 router.post('/signout',
     passport.authenticate('jwt', { session: false }),
     signout
+)
+
+router.post('/token',
+    passport.authenticate('jwt', { session: false },
+        token)
 )
 
 export default router
