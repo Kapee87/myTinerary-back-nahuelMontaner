@@ -1,5 +1,6 @@
 import express from 'express'
 import itineraryController from '../controllers/itineraries.controller.js';
+import isAdmin from '../middlewares/isAdmin.middleware.js';
 
 const router = express.Router();
 
@@ -11,7 +12,7 @@ router.get('/:id', getItinerariesById);
 
 router.post('/', createItinerary);
 
-router.delete('/:id', deleteItinerary);
+router.delete('/:id', isAdmin, deleteItinerary);
 
 router.put('/:id', updateItinerary);
 

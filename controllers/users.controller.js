@@ -18,11 +18,7 @@ const controller = {
             })
 
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error retieving data',
-                error: error,
-            })
+            return next(error)
         }
     },
     getUserById: async (req, res) => {
@@ -34,11 +30,7 @@ const controller = {
                 user: getUserById
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error retieving data',
-                error: error,
-            })
+            returnnext(error)
         }
     },
     createUser: async (req, res) => {
@@ -49,11 +41,7 @@ const controller = {
                 message: 'User created'
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error creating the User',
-                error: error
-            })
+            return next(error)
         }
     },
 
@@ -65,10 +53,7 @@ const controller = {
                 message: 'User deleted'
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error deleting the city'
-            })
+            return next(error)
         }
     },
     updateUser: async (req, res) => {
@@ -80,10 +65,7 @@ const controller = {
                 updateUserArray
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error updating the User'
-            })
+            returnnext(error)
         }
     }
 }

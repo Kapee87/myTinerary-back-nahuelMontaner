@@ -20,11 +20,7 @@ const controller = {
             })
 
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error retieving data',
-                error: error,
-            })
+            return next(error)
         }
     },
     getItinerariesById: async (req, res) => {
@@ -36,10 +32,7 @@ const controller = {
                 itinerary: getItineraryById
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error retieving data'
-            })
+            return next(error)
         }
     },
     createItinerary: async (req, res) => {
@@ -51,11 +44,7 @@ const controller = {
                 message: 'Itinerary created'
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error creating the Itinerary',
-                error: error
-            })
+            return next(error)
         }
     },
     deleteItinerary: async (req, res) => {
@@ -66,10 +55,7 @@ const controller = {
                 message: 'Itinerary deleted'
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error deleting the Itinerary'
-            })
+            returnnext(error)
         }
     },
     updateItinerary: async (req, res) => {
@@ -82,12 +68,7 @@ const controller = {
                 oldData: req.body
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error updating the Itinerary',
-                old: req.body,
-                error
-            })
+            return next(error)
         }
     }
 }

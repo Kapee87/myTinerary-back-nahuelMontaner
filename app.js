@@ -4,8 +4,10 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 
-
 import indexRouter from './router/index.router.js';
+import { notFoundHandler } from './middlewares/notFoundHandler.middleware.js';
+import { errorHandler } from './middlewares/errorHandler.middleware.js';
+
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -16,6 +18,9 @@ app.use(morgan('dev'))
 app.use(cors())
 
 app.use('/api', indexRouter)
+
+app.use(notFoundHandler)
+app.use(errorHandler)
 
 
 app.listen(PORT, () => console.log('Server running on port: ' + PORT));

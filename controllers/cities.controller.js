@@ -28,11 +28,7 @@ const controller = {
             })
 
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error retieving data',
-                error: error,
-            })
+            returnnext(error)
         }
     },
     getCitiesById: async (req, res) => {
@@ -51,11 +47,7 @@ const controller = {
                 Cities: getCitieById
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error retieving data',
-                error: error
-            })
+            return next(error)
         }
     },
     createCity: async (req, res) => {
@@ -66,11 +58,7 @@ const controller = {
                 message: 'City created'
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error creating the city',
-                error: error
-            })
+            returnnext(error)
         }
     },
     deleteCity: async (req, res) => {
@@ -81,10 +69,7 @@ const controller = {
                 message: 'City deleted'
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error deleting the city'
-            })
+            return next(error)
         }
     },
     updateCity: async (req, res) => {
@@ -96,10 +81,7 @@ const controller = {
                 updateCityArray
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error updating the city'
-            })
+            return next(error)
         }
     }
 }

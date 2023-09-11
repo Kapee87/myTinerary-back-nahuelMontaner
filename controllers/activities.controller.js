@@ -18,11 +18,7 @@ const controller = {
             })
 
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error retieving data',
-                error: error,
-            })
+            return next(error)
         }
     },
     getActivityById: async (req, res) => {
@@ -34,10 +30,7 @@ const controller = {
                 activity: getActivityById
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error retieving data'
-            })
+            return next(error)
         }
     },
     createActivity: async (req, res) => {
@@ -49,11 +42,7 @@ const controller = {
                 message: 'Activity created'
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error creating the Activity',
-                error: error
-            })
+            return next(error)
         }
     },
     deleteActivity: async (req, res) => {
@@ -64,10 +53,7 @@ const controller = {
                 message: 'Activity deleted'
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error deleting the Activity'
-            })
+            return next(error)
         }
     },
     updateActivity: async (req, res) => {
@@ -79,10 +65,7 @@ const controller = {
                 updateActivityArray
             })
         } catch (error) {
-            return res.status(500).json({
-                success: false,
-                message: 'Error updating the Activity'
-            })
+            return next(error)
         }
     }
 }
