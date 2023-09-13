@@ -19,6 +19,9 @@ export const validateSignUpUser = joi.object({
     name: joi.string()
         .min(2)
         .max(50),
+    lastname: joi.string()
+        .min(2)
+        .max(50),
     //.regex() solo caracteres alfanumericos
     image: joi.string()
         .required()
