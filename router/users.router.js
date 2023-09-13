@@ -1,7 +1,7 @@
 import express from 'express'
 import userController from '../controllers/users.controller.js';
 import { validator } from '../middlewares/validator.js';
-import { createUserSchema } from '../schema/user.schema.js';
+import { validateSignUpUser } from '../schema/user.schema.js';
 
 const router = express.Router();
 
@@ -11,7 +11,7 @@ router.get('/', getUsers);
 
 router.get('/:id', getUserById);
 
-router.post('/', validator(createUserSchema), createUser);
+router.post('/', validator(validateSignUpUser), createUser);
 
 router.post('/', createUser);
 
