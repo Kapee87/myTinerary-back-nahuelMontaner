@@ -1,7 +1,6 @@
-import passport from "passport";
 import User from "../models/User.js";
+import passport from "passport";
 import { Strategy, ExtractJwt } from 'passport-jwt'
-
 
 export default passport.use(
     new Strategy(
@@ -11,10 +10,14 @@ export default passport.use(
         },
         async (jwt_payload, done) => {
             try {
-                let user = await User.findOne({ _id: jwt_payload.id }, '-password')
-                if (user) return done(null, user)
+                const user = await User.findOne({ _id: jwt_payload.id }, '-password')
 
-                return done(null, false)
+                if (user) {
+                    return done(null, user)
+                } else {
+                    return done(null, false)
+                }
+
             } catch (error) {
                 console.log('error de passport', error);
                 return done(error, false)

@@ -79,18 +79,20 @@ const controller = {
             next(error)
         }
     },
-    token: async (res, req, next) => {
+    token: async (req, res, next) => {
         const { user } = req
+        // console.log(req, res);
         try {
             return res.status(200).json({
                 user: {
                     name: user.name,
                     email: user.email,
                     image: user.image
-                }
+                },
             })
         } catch (error) {
-            next(error)
+            console.log(error);
+            // next(error)
         }
     }
 }
