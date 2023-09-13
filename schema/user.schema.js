@@ -22,5 +22,8 @@ export const createUserSchema = joi.object({
     //.regex() solo caracteres alfanumericos
     image: joi.string()
         .required()
-        .uri()
+        .uri(),
+    country: joi.string()
+        .min(2)
+        .max(50)
 })
