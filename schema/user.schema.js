@@ -1,6 +1,6 @@
 import joi from 'joi'
 
-export const createUserSchema = joi.object({
+export const validateSignUpUser = joi.object({
     // _id: joi.any(),
     email: joi.string()
         .required()
@@ -26,4 +26,21 @@ export const createUserSchema = joi.object({
     country: joi.string()
         .min(2)
         .max(50)
+})
+
+export const validateSignInUser = joi.object({
+    // _id: joi.any(),
+    email: joi.string()
+        .required()
+        .email({
+            minDomainSegments: 2
+        })
+        .messages({
+            'any.required': 'El mail es requerido'
+        }),
+    password: joi.string()
+        .required()
+        .min(8)
+        .max(35)
+        .alphanum()
 })
