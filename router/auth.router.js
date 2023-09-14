@@ -11,7 +11,8 @@ import { validateSignInUser, validateSignUpUser } from '../schema/user.schema.js
 
 const router = express.Router();
 
-const { signup, signin, signout, token } = authController
+const { signup, signin, signout, token, googleSignIn } = authController
+
 router.post('/signup',
     validator(validateSignUpUser),
     accountExistsSignUp,
@@ -24,6 +25,9 @@ router.post('/signin',
     passwordIsOk,
     signin);
 
+router.post('/google', googleSignIn)
+
+
 router.post('/signout',
     passport.authenticate('jwt', { session: false }),
     signout
@@ -33,5 +37,6 @@ router.post('/token',
     passport.authenticate('jwt', { session: false }),
     token
 )
+
 
 export default router
